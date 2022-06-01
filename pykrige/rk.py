@@ -57,7 +57,7 @@ class RegressionKriging:
 
     def __init__(
         self,
-        regression_model=SVR(),
+        #regression_model=SVR(),
         method="ordinary",
         variogram_model="linear",
         n_closest_points=10,
@@ -79,7 +79,7 @@ class RegressionKriging:
         functional_drift=None,
     ):
         check_sklearn_model(regression_model)
-        self.regression_model = regression_model
+        #self.regression_model = regression_model
         self.n_closest_points = n_closest_points
         self.krige = Krige(
             method=method,
@@ -119,9 +119,9 @@ class RegressionKriging:
         y: ndarray
             array of targets (Ns, )
         """
-        self.regression_model.fit(p, y)
-        ml_pred = self.regression_model.predict(p)
-        print("Finished learning regression model")
+        #self.regression_model.fit(p, y)
+        #ml_pred = self.regression_model.predict(p)
+        #print("Finished learning regression model")
         # residual=y-ml_pred
         self.krige.fit(x=x, y=y - ml_pred)
         print("Finished kriging residuals")
@@ -146,7 +146,7 @@ class RegressionKriging:
             The expected value of ys for the query inputs, of shape (Ns,).
 
         """
-        return self.krige_residual(x, **kwargs) + self.regression_model.predict(p)
+        return self.krige_residual(x, **kwargs) #+ self.regression_model.predict(p)
 
     def krige_residual(self, x, **kwargs):
         """
