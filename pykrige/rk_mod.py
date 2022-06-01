@@ -119,7 +119,7 @@ class RegressionKriging:
         y: ndarray
             array of targets (Ns, )
         """
-        #self.regression_model.fit(p, y)
+        self.regression_model.fit(p, y)
         #ml_pred = self.regression_model.predict(p)
         #print("Finished learning regression model")
         # residual=y-ml_pred
