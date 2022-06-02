@@ -221,7 +221,7 @@ class OrdinaryKriging:
         if hasattr(self.variogram_model, "pykrige_kwargs"):
             # save the model in the class
             self.model = self.variogram_model
-            if self.model.dim == 3:
+            if self.model.field_dim == 3:
                 raise ValueError("GSTools: model dim is not 1 or 2")
             self.variogram_model = "custom"
             variogram_function = self.model.pykrige_vario
