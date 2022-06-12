@@ -8,7 +8,7 @@ from sklearn.metrics import r2_score
 from sklearn.svm import SVR
 
 
-class RegressionKriging:
+class RegressionKrigingMod:
     """
     An implementation of Regression-Kriging.
 
