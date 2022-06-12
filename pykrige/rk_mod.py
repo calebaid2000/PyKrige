@@ -123,7 +123,7 @@ class RegressionKriging:
         #ml_pred = self.regression_model.predict(p)
         #print("Finished learning regression model")
         # residual=y-ml_pred
-        self.krige.fit(x=x, y=y - ml_pred)
+        self.krige.fit(x=x, y=y)
         print("Finished kriging residuals")
 
     def predict(self, p, x, **kwargs):
