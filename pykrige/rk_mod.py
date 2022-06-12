@@ -78,7 +78,7 @@ class RegressionKrigingMod:
         ext_drift_grid=(None, None, None),
         functional_drift=None,
     ):
-        check_sklearn_model(regression_model)
+        #check_sklearn_model(regression_model)
         #self.regression_model = regression_model
         self.n_closest_points = n_closest_points
         self.krige = Krige(
